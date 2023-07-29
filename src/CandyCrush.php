@@ -3,20 +3,15 @@
 class CandyCrush {
     public function howLong($times, $position) {
         $n = count($times);
-        $maxTime = 0;
-
+        $left = 0;
+        $right = 0;
         for ($i = 0; $i < $n; $i++) {
-            // Calculate the time it takes for the candy to reach the current position.
-            $timeToReach = abs($position - $i);
-
-            // Calculate the time it takes for the current position to get crushed.
-            $timeToCrush = max($times[$i] - $timeToReach, 0);
-
-            // Update the maximum time if the current position takes longer to get crushed.
-            $maxTime = max($maxTime, $timeToCrush);
+            if ($i < $position) {
+                $left = max($left, $times[$i] - ($position - $i));
+            } else if ($i > $position) {
+                $right = max($right, $times[$i] - ($i - $position));
+            }
         }
-
-        return $maxTime;
+        return max($left, $right);
     }
 }
-
