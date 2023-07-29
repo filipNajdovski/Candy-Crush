@@ -32,16 +32,10 @@ class CandyCrush {
             $times[$currentIndex] = 0;
             
             // Decide the next position to move based on the maximum crush time
-            if ($canMoveToPosition($currentIndex - 1) && $canMoveToPosition($currentIndex + 1)) {
-                if ($times[$currentIndex - 1] >= $times[$currentIndex + 1]) {
-                    $currentIndex--;
-                } else {
-                    $currentIndex++;
-                }
-            } elseif ($canMoveToPosition($currentIndex - 1)) {
-                $currentIndex--;
-            } elseif ($canMoveToPosition($currentIndex + 1)) {
+            if ($canMoveToPosition($currentIndex + 1) && $times[$currentIndex + 1] === $maxCrushTime) {
                 $currentIndex++;
+            } elseif ($canMoveToPosition($currentIndex - 1) && $times[$currentIndex - 1] === $maxCrushTime) {
+                $currentIndex--;
             } else {
                 // If both left and right positions are not valid or not equal to maxCrushTime,
                 // break the loop as the candy cannot move anymore
