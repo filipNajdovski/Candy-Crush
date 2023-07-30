@@ -23,7 +23,7 @@ echo $candyCrush->howLong([3, 3, 1, 3, 4, 4, 1, 3], 7) . PHP_EOL; // Output: 3
 echo $candyCrush->howLong([1, 2, 4, 3, 4, 3, 1, 3, 3, 4], 1) . PHP_EOL; // Output: 4
 
 // Test Case 7
-echo $candyCrush->howLong([2, 1, 4, 4, 1, 1, 1, 1, 2, 1], 6) . PHP_EOL; // Output: 2
+echo $candyCrush->howLong([2, 1, 4, 4, 1, 1, 1, 1, 2, 1], 6) . PHP_EOL; // Output: 1
 
 // Test Case 8
 echo $candyCrush->howLong([950, 501, 913, 2, 636, 287, 753, 5, 126, 1, 305, 2, 712, 3, 1, 5, 4, 26, 715, 532, 2, 4, 98, 3, 296, 4, 184, 1, 154, 541, 2, 4, 2, 141, 577, 376, 67, 3, 424, 360, 521, 5, 4, 5, 4, 886, 3, 5, 5, 334], 28) . PHP_EOL; // Output: 541
